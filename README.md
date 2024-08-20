@@ -107,4 +107,4 @@ This project is licensed under the [MIT License](LICENSE). See the LICENSE file 
 
 ### Contact
 
-For any questions or issues, please contact [your email] or open an issue on the GitHub repository.
+For any questions or issues, please contact tanmaychaturvedimgs@gmail.com or open an issue on the GitHub repository.
