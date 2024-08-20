@@ -84,7 +84,7 @@ The Advanced RAG Pipeline is a cutting-edge tool designed to support researchers
    - Configure API keys and other credentials required by the libraries.
 
 3. **Document Upload:**
-   - Before running the pipeline, upload your documents to the folder named `dataset_llm` inside your virtual environment.
+   - Before running the pipeline, Create a folder inside your virtual environment and then upload your document in the given folder. 
 
 4. **Running the Pipeline:**
    - Execute the main script: `python final_app.py`
