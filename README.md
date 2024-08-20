@@ -1,5 +1,7 @@
 # Advanced-RAG-Pipeline
+
 The Advanced RAG Pipeline is a cutting-edge tool designed to support researchers by efficiently retrieving and generating precise information from various sources. Leveraging modern libraries like Langchain and Hugging Face Transformers, it enhances research workflows with high accuracy and scalability.
+
 ### Workflow
 
 1. **PDF and Document Handling:**
@@ -11,7 +13,7 @@ The Advanced RAG Pipeline is a cutting-edge tool designed to support researchers
    - The `PaddleOCR` and `PPStructure` libraries are employed to extract text and table structures from the images.
 
 3. **Table and Header Processing:**
-   - Detected tables and headers are processed and stored using a custom `CSVHashMap` class. Headers are extracted using a custom logic that adjusts bounding boxes to crop relevant parts of the images.
+   - Detected tables and headers are processed and stored using a custom `CSVHashMap` class. Headers are extracted using custom logic that adjusts bounding boxes to crop relevant parts of the images.
 
 4. **Web Scraping and Context Retrieval:**
    - For context retrieval, web pages are scraped using `requests` and `BeautifulSoup` if the information is not found in local documents.
@@ -32,7 +34,7 @@ The Advanced RAG Pipeline is a cutting-edge tool designed to support researchers
 ### Libraries and Dependencies
 
 1. **Image and PDF Processing:**
-   - `pdf2image`: Used to convert PDF pages into images.
+   - `pdf2image`: Converts PDF pages into images.
    - `PIL` (Pillow): Provides image handling and processing capabilities.
    - `cv2` (OpenCV): Utilized for image manipulation and table extraction.
 
@@ -45,7 +47,7 @@ The Advanced RAG Pipeline is a cutting-edge tool designed to support researchers
 3. **Data Handling:**
    - `pandas`: Provides DataFrame structures for handling tabular data.
    - `openpyxl`: Used for Excel file manipulation and saving images.
-   - `numpy`: Provides support for numerical calculations and vector operations.
+   - `numpy`: Supports numerical calculations and vector operations.
 
 4. **Web Scraping and Search:**
    - `requests`: Handles HTTP requests to fetch web pages.
@@ -63,13 +65,49 @@ The Advanced RAG Pipeline is a cutting-edge tool designed to support researchers
    - `os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'`: Suppresses KMP duplicate library warning.
    - `os.environ['HF_HUB_DISABLE_SYMLINKS_WARNING'] = '1'`: Disables Hugging Face cache symlink warnings.
 
-### Custom Classes and Functions
+### Files
 
-1. **ChatChain:**
-   - Manages a sequence of chat messages to construct prompts for the language model.
+1. **`utils_final.py`:**
+   - Contains utility functions and classes used throughout the pipeline.
 
-2. **ChatModel:**
-   - Handles interactions with the language model and incorporates context into queries.
+2. **`final_app.py`:**
+   - Contains the frontend code to interact with the pipeline.
 
-3. **Utility Functions:**
-   - Functions like `create_images`, `detect_table_and_header_images`, `load_data`, and `dataChunking` assist in processing, loading, and chunking data.
+### Usage Instructions
+
+1. **Setup:**
+   - Clone the repository: `git clone https://github.com/yourusername/Advanced-RAG-Pipeline.git`
+   - Install dependencies: `pip install -r requirements.txt`
+
+2. **Configuration:**
+   - Set up environment variables as needed in the `.env` file.
+   - Configure API keys and other credentials required by the libraries.
+
+3. **Document Upload:**
+   - Before running the pipeline, upload your documents to the folder named `dataset_llm` inside your virtual environment.
+
+4. **Running the Pipeline:**
+   - Execute the main script: `python final_app.py`
+   - Provide necessary input files and configuration settings as specified in the documentation.
+
+### Contributing
+
+Contributions to the Advanced RAG Pipeline project are welcome! Please follow these guidelines:
+   - Fork the repository and create a feature branch.
+   - Commit your changes with clear messages.
+   - Open a pull request and provide a description of your changes.
+
+### License
+
+This project is licensed under the [MIT License](LICENSE). See the LICENSE file for details.
+
+### Acknowledgements
+
+- **Langchain:** For document processing and chunking.
+- **Hugging Face Transformers:** For powerful language models and embeddings.
+- **PaddleOCR:** For robust OCR capabilities.
+- **Chroma:** For efficient vector storage and retrieval.
+
+### Contact
+
+For any questions or issues, please contact [your email] or open an issue on the GitHub repository.
