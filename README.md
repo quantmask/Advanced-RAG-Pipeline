@@ -108,6 +108,16 @@ This project is licensed under the [MIT License](LICENSE). See the LICENSE file 
 - Dr. Sukanta Halder, Assistant Professor, Department of Electrical Engineering, I.I.T (I.S.M), Dhanbaad.
 - Mr. Sudheer Kumar, Research Scholar, S.V.N.I.T, Surat.
 
+### Test Results
+
+We have rigorously tested the Advanced RAG Pipeline to ensure its accuracy and reliability. Our testing involved multiple questions, and the model correctly answered with the accuracy of 94.3% in, demonstrating high performance.
+
+
+For detailed test results, including the questions and answers, please refer to the [Test Results PDF](docs/ChatChain.pdf).
+
+...
+
+### Contact
 ### Contact
 
 For any questions or issues, please contact tanmaychaturvedimgs@gmail.com or open an issue on the GitHub repository.
