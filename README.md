@@ -113,7 +113,7 @@ This project is licensed under the [MIT License](LICENSE). See the LICENSE file 
 We have rigorously tested the Advanced RAG Pipeline to ensure its accuracy and reliability. Our testing involved multiple questions, and the model correctly answered with the accuracy of 94.3% in, demonstrating high performance.
 
 
-For detailed test results, including the questions and answers, please refer to the [Chatchain Test Results PDF](docs/ChatChain.pdf).
+For detailed test results, including the questions and answers, please refer to the [Chatchain Test Results PDF](ChatChain.pdf).
 
 
 
