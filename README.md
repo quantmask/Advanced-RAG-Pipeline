@@ -76,9 +76,11 @@ The Advanced RAG Pipeline is a cutting-edge tool designed to support researchers
 ### Usage Instructions
 
 
-1. **Setup:**
-   - Clone the repository: `git clone https://github.com/yourusername/Advanced-RAG-Pipeline.git`
-   - Install dependencies: `pip install -r requirements.txt`
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/your-username/Credit Risk Analysis using ML algorithms.git
+   cd Credit Risk Analysis using ML algorithms
+   ```
 
 2. **Configuration:**
    - Set up environment variables as needed in the `.env` file.
