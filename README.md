@@ -1,9 +1,75 @@
 # Advanced-RAG-Pipeline
 The Advanced RAG Pipeline is a cutting-edge tool designed to support researchers by efficiently retrieving and generating precise information from various sources. Leveraging modern libraries like Langchain and Hugging Face Transformers, it enhances research workflows with high accuracy and scalability.
+### Workflow
 
-## Features
+1. **PDF and Document Handling:**
+   - The pipeline begins by loading and processing documents from different formats, such as PDFs, DOCX, and TXT files. This is done using `PyPDFLoader`, `Docx2txtLoader`, and `TextLoader` from the LangChain library.
+   - PDF files are converted to images using the `pdf2image` library for further processing.
 
-- **Contextual Retrieval**: Extracts relevant information from PDFs, URLs, and web sources.
-- **Efficient Processing**: Achieves 92% efficiency in information retrieval and generation.
-- **Advanced Libraries**: Utilizes Langchain, Hugging Face Transformers, PaddleOCR, and OpenCV.
-- **Scalable and Flexible**: Adapts to various document formats and retrieval requirements.
+2. **Table Detection and Extraction:**
+   - The `TableTransformerForObjectDetection` model from the `transformers` library detects tables in the images converted from PDF pages.
+   - The `PaddleOCR` and `PPStructure` libraries are employed to extract text and table structures from the images.
+
+3. **Table and Header Processing:**
+   - Detected tables and headers are processed and stored using a custom `CSVHashMap` class. Headers are extracted using a custom logic that adjusts bounding boxes to crop relevant parts of the images.
+
+4. **Web Scraping and Context Retrieval:**
+   - For context retrieval, web pages are scraped using `requests` and `BeautifulSoup` if the information is not found in local documents.
+   - DuckDuckGo search is used to find web contexts, and the most similar context is identified using cosine distance calculations on embeddings.
+
+5. **Embedding and Vector Database:**
+   - Text embeddings are generated using the `HuggingFaceEmbeddings` class with the `sentence-transformers/all-MiniLM-L6-v2` model.
+   - A Chroma vector store is used to store and retrieve document chunks efficiently.
+
+6. **Query Handling and Response Generation:**
+   - Queries are improved by removing common question phrases and summarized using a pre-trained language model.
+   - A `ChatModel` class handles the interaction between the user query, the retrieval process, and the language model.
+   - The language model, `meta-llama/Meta-Llama-3-8B-Instruct`, is used to generate responses based on retrieved contexts and user input.
+
+7. **Data Chunking and Vector Store Creation:**
+   - Documents are split into manageable chunks using the `CharacterTextSplitter` for efficient processing and retrieval.
+
+### Libraries and Dependencies
+
+1. **Image and PDF Processing:**
+   - `pdf2image`: Used to convert PDF pages into images.
+   - `PIL` (Pillow): Provides image handling and processing capabilities.
+   - `cv2` (OpenCV): Utilized for image manipulation and table extraction.
+
+2. **Natural Language Processing:**
+   - `transformers`: Used for table detection with the `TableTransformerForObjectDetection` and language models.
+   - `HuggingFaceEmbeddings`: Generates sentence embeddings for similarity comparison.
+   - `langchain`: Facilitates document loading and chunking.
+   - `langchain_community`: Provides community-contributed implementations for embeddings and vector stores.
+
+3. **Data Handling:**
+   - `pandas`: Provides DataFrame structures for handling tabular data.
+   - `openpyxl`: Used for Excel file manipulation and saving images.
+   - `numpy`: Provides support for numerical calculations and vector operations.
+
+4. **Web Scraping and Search:**
+   - `requests`: Handles HTTP requests to fetch web pages.
+   - `BeautifulSoup`: Parses HTML content to extract relevant data.
+   - `duckduckgo_search`: Conducts web searches to retrieve contextual information.
+
+5. **OCR and Table Extraction:**
+   - `PaddleOCR` and `PPStructure`: Extract text and table structures from images.
+
+6. **General Utilities:**
+   - `os`: Handles file and directory operations.
+   - `torch`: Supports PyTorch operations and tensor handling for models.
+
+7. **Environment Settings:**
+   - `os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'`: Suppresses KMP duplicate library warning.
+   - `os.environ['HF_HUB_DISABLE_SYMLINKS_WARNING'] = '1'`: Disables Hugging Face cache symlink warnings.
+
+### Custom Classes and Functions
+
+1. **ChatChain:**
+   - Manages a sequence of chat messages to construct prompts for the language model.
+
+2. **ChatModel:**
+   - Handles interactions with the language model and incorporates context into queries.
+
+3. **Utility Functions:**
+   - Functions like `create_images`, `detect_table_and_header_images`, `load_data`, and `dataChunking` assist in processing, loading, and chunking data.
