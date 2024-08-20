@@ -76,7 +76,11 @@ The Advanced RAG Pipeline is a cutting-edge tool designed to support researchers
 ### Usage Instructions
 
 1. **Setup:**
-   - Clone the repository: `git clone https://github.com/yourusername/Advanced-RAG-Pipeline.git`
+   - Clone the repository:
+      ```bash
+   git clone https://github.com/yourusername/Advanced-RAG-Pipeline.git
+  Advanced-RAG-Pipeline.git
+   ```
    - Install dependencies: `pip install -r requirements.txt`
 
 2. **Configuration:**
