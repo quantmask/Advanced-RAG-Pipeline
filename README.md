@@ -102,11 +102,8 @@ Contributions to the Advanced RAG Pipeline project are welcome! Please follow th
 This project is licensed under the [MIT License](LICENSE). See the LICENSE file for details.
 
 ### Acknowledgements
-
-- **Langchain:** For document processing and chunking.
-- **Hugging Face Transformers:** For powerful language models and embeddings.
-- **PaddleOCR:** For robust OCR capabilities.
-- **Chroma:** For efficient vector storage and retrieval.
+- Dr. Sukanta Halder, Assistant Professor, Department of Electrical Engineering, I.I.T (I.S.M), Dhanbaad.
+- Mr. Sudheer Kumar, Research Scholar, S.V.N.I.T, Surat.
 
 ### Contact
 
